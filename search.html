@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Comfort Haven Care - Search Authorities</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top bg-white shadow-sm">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
+                <a href="index.html" class="navbar-brand">
+                    <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-clinic-medical me-2"></i>Comfort Haven Care</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="Profile.html" class="nav-item nav-link">Profile</a>
+                        <a href="service.html" class="nav-item nav-link">Service</a>
+                        <a href="Peronalised care plan.html" class="nav-item nav-link">Personalised Care Plan</a>
+                        <a href="blog.html" class="nav-item nav-link">Blogs</a>
+                        <a href="search.html" class="nav-item nav-link">Search Authorities</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Search Start -->
+    <div class="container">
+        <h1>Find a Doctor or Hospital</h1>
+        <div class="search-form">
+            <input type="text" id="hospital-name" placeholder="Enter Hospital Name">
+            <input type="text" id="doctor-name" placeholder="Enter Doctor Name">
+            <button onclick="search()">Search</button>
+        </div>
+        <div id="results"></div>
+    </div>
+    <script src="script.js"></script>
+    <!-- Search End -->
+
+    
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- Search Functionality -->
+    <script>
+        const doctors = [
+            { doctorName: 'Dr. John Doe', hospitalName: 'City Hospital', image: 'img/team-1.jpg', specialty: 'Cardiology Specialist', description: 'Expert in heart diseases and related conditions.' },
+            { doctorName: 'Dr. Jane Smith', hospitalName: 'County Hospital', image: 'img/team-2.jpg', specialty: 'Neurology Specialist', description: 'Specialist in brain and nervous system disorders.' },
+            { doctorName: 'Dr. Jim Brown', hospitalName: 'City Hospital', image: 'img/team-3.jpg', specialty: 'Orthopedic Specialist', description: 'Specializes in bones, joints, and muscles.' },
+            { doctorName: 'Dr. Emily Clark', hospitalName: 'Community Hospital', image: 'img/team-4.jpg', specialty: 'Pediatrics Specialist', description: 'Expert in children\'s health and diseases.' },
+            { doctorName: 'Dr. Michael Johnson', hospitalName: 'General Hospital', image: 'img/team-5.jpg', specialty: 'General Physician', description: 'General health care and diagnosis.' },
+        ];
+
+        $(document).ready(function() {
+            $('#searchButton').click(function() {
+                var searchInput = $('#searchInput').val().toLowerCase();
+                var filteredResults = doctors.filter(function(doctor) {
+                    return doctor.doctorName.toLowerCase().includes(searchInput) || doctor.hospitalName.toLowerCase().includes(searchInput);
+                });
+
+                displayResults(filteredResults);
+            });
+        });
+
+        function displayResults(results) {
+            var resultsDiv = $('#searchResults .row.g-5');
+            resultsDiv.empty();
+
+            if (results.length === 0) {
+                resultsDiv.append('<p>No results found</p>');
+                return;
+            }
+
+            results.forEach(function(result) {
+                var resultItem = `
+                    <div class="col-lg-6">
+                        <div class="card border-0 shadow-sm">
+                            <div class="row g-0">
+                                <div class="col-12 col-sm-5">
+                                    <img class="img-fluid w-100 h-100" src="${result.image}" style="object-fit: cover;" alt="Doctor Image">
+                                </div>
+                                <div class="col-12 col-sm-7">
+                                    <div class="card-body">
+                                        <h3 class="doctor-name">${result.doctorName}</h3>
+                                        <p class="card-text text-primary">${result.specialty}</p>
+                                        <p class="card-text">${result.description}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                resultsDiv.append(resultItem);
+            });
+        }
+    </script>
+
+</body>
+
+</html>

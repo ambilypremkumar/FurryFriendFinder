@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Comfort Haven Care</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .toggle-section {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+<div class="container-fluid sticky-top bg-white shadow-sm">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand">
+                <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-clinic-medical me-2"></i>Comfort Haven Care</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="Profile.html" class="nav-item nav-link">Profile</a>
+                    <a href="service.html" class="nav-item nav-link">Service</a>
+                    <a href="Peronalised care plan.html" class="nav-item nav-link">Peronalised care plan</a>
+                    <a href="blog.html" class="nav-item nav-link">Blogs</a>
+                    <a href="search.html" class="nav-item nav-link">Search Authorities</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- Navbar End -->
+
+    <!-- Login and Registration Start -->
+    <div class="container-fluid bg-secondary my-5 py-5">
+        <div class="container py-5">
+            <div class="row gx-5">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="bg-white text-center rounded p-5">
+                        <h1 class="mb-4">Login or Register</h1>
+                        <form id="login-register-form">
+                            <div class="row g-3">
+                                <!-- Login Section -->
+                                <div class="col-12" id="login-section">
+                                    <h2 class="mb-3">Login</h2>
+                                    <input type="email" id="login-email" class="form-control bg-light border-0 mb-3" placeholder="Your Email" style="height: 55px;">
+                                    <input type="password" id="login-password" class="form-control bg-light border-0 mb-3" placeholder="Your Password" style="height: 55px;">
+                                    <button class="btn btn-primary w-100 py-3 mb-4" type="button" onclick="login()">Login</button>
+                                    <p class="toggle-link">Not a member? <button type="button" class="btn btn-link" id="showSignup">Register now</button></p>
+                                </div>
+                                <!-- Register Section -->
+                                <div class="col-12 toggle-section" id="register-section">
+                                    <h2 class="mb-3">Register</h2>
+                                    <input type="text" id="register-name" class="form-control bg-light border-0 mb-3" placeholder="Your Name" style="height: 55px;">
+                                    <input type="email" id="register-email" class="form-control bg-light border-0 mb-3" placeholder="Your Email" style="height: 55px;">
+                                    <input type="password" id="register-password" class="form-control bg-light border-0 mb-3" placeholder="Your Password" style="height: 55px;">
+                                    <input type="password" id="register-confirm-password" class="form-control bg-light border-0 mb-3" placeholder="Confirm Password" style="height: 55px;">
+                                    <button class="btn btn-primary w-100 py-3" type="button" onclick="register()">Register</button>
+                                    <p class="toggle-link">Already a member? <button type="button" class="btn btn-link" id="showLogin">Login now</button></p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Login and Registration End -->
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById('showSignup').addEventListener('click', function() {
+            document.getElementById('login-section').style.display = 'none';
+            document.getElementById('register-section').style.display = 'block';
+        });
+
+        document.getElementById('showLogin').addEventListener('click', function() {
+            document.getElementById('register-section').style.display = 'none';
+            document.getElementById('login-section').style.display = 'block';
+        });
+
+        function login() {
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            // Validate login credentials (for demonstration purposes, we'll assume they are always correct)
+            if (email && password) {
+                // Redirect to profile management page
+                window.location.href = 'ProfileManagement.html';
+            } else {
+                alert('Please enter your email and password.');
+            }
+        }
+
+        function register() {
+            const name = document.getElementById('register-name').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            const confirmPassword = document.getElementById('register-confirm-password').value;
+
+            // Validate registration data (for demonstration purposes, we'll assume they are always correct)
+            if (name && email && password && password === confirmPassword) {
+                alert('Registration successful');
+                document.getElementById('register-section').style.display = 'none';
+                document.getElementById('login-section').style.display = 'block';
+            } else {
+                alert('Please fill out all fields and ensure passwords match.');
+            }
+        }
+    </script>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
