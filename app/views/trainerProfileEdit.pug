@@ -1,0 +1,24 @@
+extends layout
+block content
+
+    .body-content
+        section.trainer
+                section.trainerprofile
+                    .trainer-section
+                        h1.heading Trainer Profile
+                    .appointment-form
+                        form(action=`/update-profile/${trainer.trainer_id}`, method='POST')
+                            label(for='name') Name:
+                            input(type='text', id='name', name='name', value=trainer.trainer_name, required='')
+                            label(for='email') Email:
+                            input(type='email', id='email', name='email', value=trainer.trainer_email, required='')
+                            label(for='phone') Phone:
+                            input(type='tel', id='phone', name='phone', value= user.user_phonenumber, required='')
+                            label(for='experience') Experience:
+                            input(type='number', id='experience', name='experience', value= trainer.trainer_experience, required='')
+                            label(for='location') Location:
+                            input(type='text', id='location', name='location', value=trainer.trainer_location, required='')
+                            label(for='bio') Bio:
+                            textarea(id='bio', name='bio', rows='5', required='')= trainer.trainer_description
+                            button(type='submit') Update Profile
+                            

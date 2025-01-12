@@ -1,0 +1,50 @@
+header.myHeader#myHeader
+    nav
+        .logo
+            a(href="/home")
+                img(src="/img/logo.png" alt="Logo")
+        .nav-links#navLinks
+            i.fa.fa-times(onclick="hideMenu()")
+
+            if !session
+                ul.list-item
+                    li
+                        a(href="/home") HOME
+                    li
+                        a(href="/aboutUs") ABOUT US
+                    li
+                        a(href="/finder") FINDER
+                    li
+                        a(href="/blog") BLOG
+                    li 
+                        a(href="/contact") CONTACT US
+            else
+                ul.list-item
+                    li
+                        a(href="/home") HOME
+                    li
+                        a(href="/aboutUs") ABOUT US
+                    li
+                        a(href="/finder") FINDER
+                    li
+                        a(href="/blog") BLOG
+                    li 
+                        a(href="/contact") CONTACT US
+
+                    if session.userType === 'petTrainer'
+                        li
+                            a(href="/trainer-dashboard") TRAINER DASHBOARD
+                        li
+                            a(href="/trainer-profile") PROFILE
+
+            i.fa.fa-bars(onclick="showMenu()")
+        .fav-icons
+            ul
+                li
+                    a(href="/login")
+                        span.mdi.mdi--user
+                li
+                    a(href="/logout")
+                        span.mdi.mdi--logout
+                li
+                    i.fa-solid.fa-cart-shopping

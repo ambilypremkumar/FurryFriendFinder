@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+    head 
+        title=title
+        include includes/styles
+        script(src="/js/customjs.js")
+        script(src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js")
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+
+    body 
+        .page-wrapper 
+            include includes/header 
+            block content
+            include includes/footer
+        

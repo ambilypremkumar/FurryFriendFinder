@@ -1,0 +1,33 @@
+extends layout
+
+block content
+    .body-content
+        section.finder
+            .about-section
+                h2 Finder 
+        section.finder-content
+            h1 Find your perfect pet trainer
+            form.search-form(action='/finder', method='GET')
+                input(type='text', name='query', placeholder='Search by name or postcode', value=query,require='')
+                button.material-symbols-outlined(type='submit') search
+        section.our-team
+            .container
+                .row.d-flex 
+                    each trainer, index in trainers
+                        if index % 3 === 0
+                            .row 
+                                each _, i in [0, 1, 2] 
+                                    - const currIndex = index + i
+                                    - const currTrainer = trainers[currIndex]
+                                    if currTrainer
+                                        .col-md-4.mb-3 
+                                            .card
+                                                img.card-img-top(src=currTrainer.trainer_image, alt=currTrainer.trainer_name, style='width:100%')
+                                                .card-body
+                                                    h5.card-title #{currTrainer.trainer_name}
+                                                    p.card-text.title #{currTrainer.trainer_speciality}
+                                                    p.card-text.trainer-spec Experience: #{currTrainer.trainer_experience}
+                                                    p.card-text #{currTrainer.trainer_email}
+                                                a.btn.btn-primary(href=`/trainer/${currTrainer.trainer_id}`) View More
+                    else 
+                        p No trainers found

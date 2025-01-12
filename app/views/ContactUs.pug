@@ -1,0 +1,29 @@
+extends layout
+block content
+    
+    .body-content 
+        section.about
+            section.aboutus
+                .about-section
+                    h1.heading Contact Us
+        .contact-info
+          p Phone: 128-496-6890
+          p Email: info@example.com
+          p Address: 119 Main Street, oxford, England
+        if success
+            .alert.alert-success= success
+        if error
+            .alert.alert-danger= error
+        .container 
+            .row
+              .contactus-form
+                  h4 GET IN TOUCH
+                  form(action="/contact", method="post")
+                      input(type="text", id="name", name="name", required="", placeholder="Name")
+                      input(type="email", id="email", name="email", required="", placeholder="Email")
+                      input(type="tel", id="phone", name="phone", required="", placeholder="Phone Number")
+                      input(type="text", id="subject", name="subject", required="", placeholder="Subject")
+                      textarea(id="message", name="message", rows="4", required="", placeholder="Your Message")
+                      button.submit-button-style(type="submit") SEND MESSAGE
+        
+    

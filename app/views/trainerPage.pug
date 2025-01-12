@@ -1,0 +1,70 @@
+extends layout
+
+block content
+
+    .body-content
+         
+          if success
+              .alert.alert-success= success
+          if error
+              .alert.alert-danger= error
+
+          section.finder
+              .about-section
+                  h2 Trainer Details
+          .container
+                .trainer-details
+                  img(src=`/${trainer.trainer_image}`, alt='Trainer Image')
+                  .trainer-description
+                    h2 Trainer Description
+                    p= trainer.trainer_description
+                    h4 Trainer Speciality:
+                      span.speciality= trainer.trainer_speciality
+                    h4 Trainer Experience:
+                      span.speciality= trainer.trainer_experience
+                  .ratings-feedback
+                    h3 Ratings and Feedback
+                    // Add ratings and feedback here
+
+          .appointment-form
+              h2 Book an Appointment
+              form(action=`/book-appointment/${trainer.trainer_id}`, method='POST')
+                .form-row
+                  .form-group.col
+                    label(for='name') Name:
+                    input#name.form-control(type='text', name='name', required='')
+                  .form-group.col
+                    label(for='phone') Phone Number:
+                    input#phone.form-control(type='tel', name='phone', required='')
+                .form-row
+                  .form-group.col
+                    label(for='email') Email:
+                    input#email.form-control(type='email', name='email', required='')
+                  .form-group.col
+                    label(for='pet-name') Pet Name:
+                    input#pet-name.form-control(type='text', name='petName', required='')
+                .form-row 
+                  .form-group.col
+                    label(for='appointment-date') Appointment Date:
+                    input#appointment-date.form-control(type='date', name='appointmentDate', required='')
+                  .form-group.col
+                    label(for='appointment-time') Appointment Time:
+                    input#appointment-time.form-control(type='time', name='appointmentTime', required='')
+                .form-group
+                  label(for='pet-breed') Pet Breed:
+                  input#pet-breed.form-control(type='text', name='petBreed', required='')
+                .form-group
+                  label(for='query') Any Query:
+                  textarea#query.form-control(name='query')
+          
+                input(type='hidden', name='trainerEmail', value=trainer.trainer_email)
+                button.submit-button-style(type='submit') Book Appointment
+
+
+                            
+
+
+
+
+
+                  

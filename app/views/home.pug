@@ -1,0 +1,123 @@
+extends layout
+block content
+    .body-content 
+
+        section.home_banner 
+            h1 Taking care of your Furry Friends 
+            p  We make your pets happy
+        section.testimonials
+            //- if trainers && trainers.length > 0
+            //-     h1 Our Trainers
+            //-     .row
+            //-         each trainer in trainers
+            //-             .testimonials-col
+            //-                 img(src=trainer.trainer_image)
+            //-                 div
+            //-                     p
+            //-                         | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porttitor nisi at arcu tempus,
+            //-                         | in
+            //-                         | tincidunt sem maximus. Vivamus hendrerit, felis in condimentum ultricies, elit sem bibendum
+            //-                         | sapien,
+            //-                         | sed molestie turpis
+            //-                         h3 #{trainer.trainer_name}
+            //-                         p.trainer Trainer Speciality:
+            //-                             p.trainer_spec #{trainer.trainer_speciality}
+            //-                         p.experience Trainer Experience: 
+            //-                             p.trainer_spec #{trainer.trainer_experience}
+            //- else 
+            //-     No trainers found               
+        section.course
+            h1 Services we offer
+            p
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porttitor nisi at arcu tempus, in tincidunt
+                | sem maximus. Vivamus hendrerit, felis in condimentum ultricies, elit sem bibendum sapien, sed molestie
+                | turpis enim sed nibh. Morbi diam magna, varius condimentum commodo at, lobortis a dolor.
+            .row
+                .course-col(style='background-color: #fcedda;')
+                    h3 FREE SHIPPING
+                    p
+                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porttitor nisi at arcu tempus, in
+                        | tincidunt sem maximus. Vivamus hendrerit, felis in condimentum ultricies, elit sem bibendum sapien,
+                        | sed molestie turpis enim sed nibh. Morbi diam magna, varius condimentum commodo at, lobortis a
+                        | dolor.
+                .course-col(style='background-color:#f2fbcb;')
+                    h3 ONLINE SUPPORT
+                    p
+                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porttitor nisi at arcu tempus, in
+                        | tincidunt sem maximus. Vivamus hendrerit, felis in condimentum ultricies, elit sem bibendum sapien,
+                        | sed molestie turpis enim sed nibh. Morbi diam magna, varius condimentum commodo at, lobortis a
+                        | dolor.
+                .course-col(style='background-color:#f7d8f9;')
+                    h3 MONEY RETURN
+                    p
+                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porttitor nisi at arcu tempus, in
+                        | tincidunt sem maximus. Vivamus hendrerit, felis in condimentum ultricies, elit sem bibendum sapien,
+                        | sed molestie turpis enim sed nibh. Morbi diam magna, varius condimentum commodo at, lobortis a
+                        | dolor.
+        section.campus
+            h1 Recent Products
+            p
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porttitor nisi at arcu tempus, in
+                | tincidunt sem maximus. Vivamus hendrerit, felis in condimentum ultricies, elit sem bibendum sapien,
+                | sed molestie turpis
+            .row
+                .campus-col
+                    img(src='/img/product-1.avif')
+                    .layer
+                        h3 Dogs Food
+                .campus-col
+                    img(src='/img/product-2.avif')
+                    .layer
+                        h3 Cats Food
+                .campus-col
+                    img(src='/img/product-3.avif')
+                    .layer
+                        h3 Fish Foods
+        section.facilities
+            h1 Latest Blogs
+            p
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porttitor nisi at arcu tempus, in
+                | tincidunt sem maximus. Vivamus hendrerit, felis in condimentum ultricies, elit sem bibendum sapien,
+                | sed molestie turpis
+            .row
+                .facilities-col
+                    img(src='/img/blog1.avif')
+                    h3 Temporibus autem quibusdam
+                    p
+                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porttitor nisi at arcu tempus, in
+                        | tincidunt sem maximus. Vivamus hendrerit, felis in condimentum ultricies, elit sem bibendum sapien,
+                        | sed molestie turpis
+                    p
+                        a(href='/blog') Read More
+                .facilities-col
+                    img(src='/img/blog2.avif')
+                    h3 Temporibus autem quibusdam
+                    p
+                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porttitor nisi at arcu tempus, in
+                        | tincidunt sem maximus. Vivamus hendrerit, felis in condimentum ultricies, elit sem bibendum sapien,
+                        | sed molestie turpis
+                    p
+                        a(href='/blog') Read More
+                .facilities-col
+                    img(src='/img/blog3.avif')
+                    h3 Temporibus autem quibusdam
+                    p
+                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porttitor nisi at arcu tempus, in
+                        | tincidunt sem maximus. Vivamus hendrerit, felis in condimentum ultricies, elit sem bibendum sapien,
+                        | sed molestie turpis
+                    p
+                        a(href='/blog') Read More
+        
+        
+        
+
+//- append links 
+//-     li(style="float: right;")
+//-         a(href="/loggout") Loggout 
+
+//- block content
+//-     .dashboard 
+//-         .user 
+//-             +message(opp, name)
+//-             p Name #{trainer.name}
+

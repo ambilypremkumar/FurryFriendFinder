@@ -1,0 +1,14 @@
+meta(charset="UTF-8")
+meta(name="viewport", content="width=device-width,initial-scale=1")
+title Login Page
+link(rel="stylesheet", href="login.css")
+.container
+  h1 Login
+  form(action="#", method="POST")
+    .inputs
+      label(for="username") Username:
+      input#username(type="text", name="username", required)
+    .inputs
+      label(for="password") Password:
+      input#password(type="password", name="password", required)
+    button(type="submit") Login

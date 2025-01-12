@@ -1,0 +1,25 @@
+extends layout
+block content
+
+    .body-content
+        section.trainer
+                section.trainerprofile
+                    .trainer-section
+                        h1.heading Trainer Profile
+                .container
+                    .trainer-details
+                        img(src=`/${trainer.trainer_image}`, alt='Trainer Image')
+                        
+                        ul  
+                            li Name: #{trainer.trainer_name}
+                            li Email: #{trainer.trainer_email}
+                            li Phone: #{trainer.phone}
+                            li Location: #{trainer.trainer_location}
+                            li experience: #{trainer.trainer_experience}
+                            li speciality: #{trainer.trainer_speciality}
+                            li trainer certificate :#{trainer.trainer_certificate}
+                            li Bio: #{trainer.trainer_description}
+                            a(href=`/trainer-profile-edit/${trainer.trainer_id}`) Edit Profile
+                            //a(href=`/delete-profile/${trainer.trainer_id}`) Delete Profile
+                    form(action="/delete-profile", method="POST" onsubmit="return confirm('Are you sure you want to delete your profile?');")
+                        button(type="submit") Delete Profile

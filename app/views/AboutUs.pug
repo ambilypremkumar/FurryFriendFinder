@@ -1,0 +1,91 @@
+extends layout
+block content
+    .body-content 
+        section.about
+            section.aboutus
+                .about-section
+                    h1.heading About Us
+            .about-content
+                .about1
+                    .content
+                        p
+                            | Hello guys, we are FurryFriendFinder. We are the group of animal lovers who as passionate to take care of your lovely pets. We provide various facilities to your pet at our shop.
+                        a.btn(href='') Our Services
+                    .img
+                        img(src='/img/Pet2.png', alt='')
+                .about1
+                    .img
+                        img(src='/img/Pet4.png', alt='')
+                    .content
+                        p
+                            | Our Shop is spacious. We have various equipments which will make your pet happy. Wanna know more about us??? Feel free to contact us...
+                        a.btn(href='') Contact Us
+        section.customer-section
+            #counterArea.project-count-area
+                .container
+                    .row
+                        .count-item.column
+                            .single-count
+                                h2.count 18
+                                span Years in Business
+                        .count-item.column
+                            .single-count
+                                h2.count 299
+                                span Happy People
+                        .count-item.column
+                            .single-count
+                                h2.count 300
+                                span Happy Pets
+                        .count-item.column
+                            .single-count
+                                h2.count 17
+                                span Award Winning
+        section.facilities
+            h1 Gallery
+            .row
+                .facilities-col
+                    img(src='/img/blog1.avif')
+                .facilities-col
+                    img(src='/img/blog2.avif')
+                .facilities-col
+                    img(src='/img/blog3.avif')
+            .row
+                .facilities-col
+                    img(src='/img/blog1.webp')
+                .facilities-col
+                    img(src='/img/blog2.webp')
+                .facilities-col
+                    img(src='/img/blog3.webp')
+        section.our-team
+            h1(style='text-align:center') Our Team
+            .row
+                .column
+                    .card
+                        img(src='/img/testimonial-1.jpg', alt='Jane', style='width:100%')
+                        .container
+                            h2 Rose Alfred
+                            p.title CEO &amp; Founder
+                            p Some text that describes me lorem ipsum ipsum lorem.
+                            p rose@example.com
+                            p
+                                button.button Contact
+                .column
+                    .card
+                        img(src='/img/testimonial-2.jpg', alt='Rose', style='width:100%')
+                        .container
+                            h2 Jane Jimmington
+                            p.title Manager
+                            p Some text that describes me lorem ipsum ipsum lorem.
+                            p jane@example.com
+                            p
+                                button.button Contact
+                .column
+                    .card
+                        img(src='/img/trainer.jpg', alt='John', style='width:100%')
+                        .container
+                            h2 John Jacob
+                            p.title Employee
+                            p Some text that describes me lorem ipsum ipsum lorem.
+                            p john@example.com
+                            p
+                                button.button Contact
